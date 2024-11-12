@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    font-family: "Noto Sans Khmer", sans-serif;
+    font-weight: 600;
+}
+
+.button-cart {
+    @apply mt-4 w-full bg-green-800 text-white px-4 py-2 rounded-lg;
+}
+
+.button_input {
+    @apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light ;
+}
+.button_submit {
+    @apply text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800
+    ;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for WebKit browsers */
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* Hide scrollbar for Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+}
