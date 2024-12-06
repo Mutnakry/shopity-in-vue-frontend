@@ -146,6 +146,7 @@
             <input
               :type="showPassword ? 'text' : 'password'"
               id="password"
+              min="8"
               v-model="user.userpassword"
               placeholder=". . . . . . . . . . ."
               class="button_input"
@@ -283,21 +284,28 @@ export default {
     },
 
     async registerUser() {
+      if (this.user.userpassword.length < 8) {
+        this.setError("ពាក្យសម្ថាត់ត្រូវតែមានយ៉ាងហោចណាស់ 8 តួអក្សរ!");
+        return;
+      }
+
       if (this.user.userpassword !== this.user.repassword) {
         this.setError("សូមលោកអ្នកបញ្ជាក់លេខសម្ថាត់សាជាថ្មី​ !");
         return;
       }
+
       try {
-        const response = await axios.post(
-          "http://localhost:6900/authregister",
-          {
-            email: this.user.useregmail,
-            name: this.user.usernames,
-            password: this.user.userpassword,
-          }
-        );
-        console.log("User Registration Successful:", response.data);
         alert("Registration successful.");
+        // const response = await axios.post(
+        //   "http://localhost:6900/authregister",
+        //   {
+        //     email: this.user.useregmail,
+        //     name: this.user.usernames,
+        //     password: this.user.userpassword,
+        //   }
+        // );
+        // console.log("User Registration Successful:", response.data);
+        // alert("Registration successful.");
       } catch (error) {
         console.error("Registration Error:", error);
         alert("An error occurred during registration.");

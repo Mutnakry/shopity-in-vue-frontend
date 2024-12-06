@@ -103,13 +103,13 @@
                       <button
                         type="button"
                         @click="decrementQuantity(item)"
-                        class="text-gray-500 text-xl hover:text-white rounded-l-md hover:bg-green-400 px-4"
+                        class="text-gray-500 text-xl hover:text-white hover:bg-green-400 px-4"
                       >
                         -
                       </button>
                       <input
                         type="text"
-                        class="w-12 text-center border-l text-xl border-r border-green-500"
+                        class="w-12 text-center h-8 border-l text-xl border-r border-green-500"
                         v-model="item.quantity"
                       />
                       <button
